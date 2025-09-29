@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVLinkQR - Control Your TV Easily</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <style>
+        /* Landing page specific */
+        .landing-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .landing-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .landing-container p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            flex: 1 1 250px;
+            text-align: center;
+        }
+
+        .step img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 0.8rem;
+        }
+
+        .step p {
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media(max-width: 600px){
+            .steps {
+                flex-direction: column;
+            }
+
+            .landing-container h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <h1>TVLinkQR</h1>
+        <p>Control your TV browser easily using your phone. Scan the QR code, enter the URL, and watch your TV update instantly.</p>
+
+        <div class="steps">
+            <div class="step">
+                <img src="{{ url_for('static', filename='images/step1.png') }}" alt="Scan QR Code">
+                <p>Scan the QR code displayed on your TV.</p>
+            </div>
+            <div class="step">
+                <img src="{{ url_for('static', filename='images/step2.png') }}" alt="Enter URL on Phone">
+                <p>Enter the URL you want your TV to open.</p>
+            </div>
+            <div class="step">
+                <img src="{{ url_for('static', filename='images/step3.png') }}" alt="TV Updates">
+                <p>Your TV will automatically load the website instantly.</p>
+            </div>
+        </div>
+
+        <a href="{{ url_for('tv_page') }}" class="cta-button">Use TVLinkQR</a>
+
+        <footer>
+            Developed by <a href="https://github.com/yourusername" target="_blank">'seyi SB</a>
+        </footer>
+    </div>
+</body>
+</html>

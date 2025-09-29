@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter URL to open on TV</h2>
+        <form method="POST">
+            <input type="text" name="new_url" placeholder="https://example.com" required value="{{ latest_url or '' }}">
+            <button type="submit">Open on TV</button>
+        </form>
+        <footer>
+            Developed by <a href="https://github.com/seyi-sb" target="_blank">'seyi SB</a>
+        </footer>
+    </div>
+</body>
+</html>

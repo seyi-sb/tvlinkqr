@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV QR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <div class="qr-container">
+        <h1>Scan QR to control TV</h1>
+        <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+        <p>Open this page on your phone to enter a URL.</p>
+        <footer>
+            Developed by <a href="https://github.com/seyi-sb" target="_blank">'seyi SB</a>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
