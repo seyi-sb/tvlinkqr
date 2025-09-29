@@ -38,8 +38,9 @@ def current():
 @app.route("/tv")
 def tv_page():
     """TV page: shows QR code and always show for control page."""
-    local_ip = get_local_ip()
-    remote_url = f"http://{local_ip}:5000/control"
+    """ local_ip = get_local_ip()"""
+    host = request.host_url
+    remote_url = host + "control"
 
     qr = qrcode.make(remote_url)
     buffer = io.BytesIO()
